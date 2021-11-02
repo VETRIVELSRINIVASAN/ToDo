@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TO-DO</title>
+        <link rel="Stylesheet" type="text/css" href="css\Todo.css"/>
+        <script src="js\Todo.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class = "delete-button" id="deleting-button">
+            <div class = "delete-text">Are you sure want to delete?</div>
+            <div class = "lower-delete-text">
+                <button class = "delete-cancel" id ="cancel" >Cancel</button>
+                <button class = "delete-cancel" id ="confirm-delete" >Delete</button>
+            </div>
+        </div>
+        <div class= "to-do">
+            <div class = "top-bar">
+                <span><ul class = "top-left-corner">
+                    <li><button id="navigate">⋮⋮⋮</button></li>
+                    <li><a href="#" id="title">To Do</a></li>
+                </ul></span>
+                <span class = "center">
+                    <input type="image" src="Assets\search.png" class="search"/><input type = "text" id="search"/>
+                </span>
+                <span> <ul class = "top-right-corner">
+                    <li><button id="settings"><img src="Assets\setting.png" alt="settings" class="images"></img></button></li>
+                    <li><button id="help"><img src="Assets\qnm.png" alt="question" class="images"></img></button></li>
+                    <li><button id="notification"><img src="Assets\mphone.png" alt="loud" class="images"></img></button></li>
+                    <li><button id="profile">VS</button></li>
+                </ul></span>
+            </div>
+            <div class = "bottom-bar">
+                <div class = "bottom-side-tab" id="side-tab">
+                    <div class = "menu">
+                        <ul class = "menu-items">
+                            <li><button id="back" onclick="navigate()"><</button></li>
+                            <li><button id="my-day" value ="MyDay" onclick="toDo(value)"><img src="Assets\brightness.png" alt="my-day" class="image"></img>MyDay</button></li>
+                            <li><button id="important" value="Important" onclick="toDo(value)"><img src="Assets\star-outline.png" alt="imp" class="image"></img>Important</button></li>
+                            <li><button id="planned"value="Planned" onclick="toDo(value)"><img src="Assets\calendar.png" alt="plan" class="image"></img>Planned</button></li>
+                            <li><button id="assigned" onclick="assign()"><img src="Assets\user.png" alt="assign" class="image"></img>Assigned to me</button></li>
+                            <li><button id="tasks" value="Tasks" onclick="toDo(value)"><img src="Assets\home.png" alt="tasks" class="image"></img>Tasks</button></li>
+                            <div id= "added-task"></div>
+                            <li><button id= "add-Task" onclick="showTask()">+</button><input type = "text" placeholder="New list" id="new-list"></li>                   
+                    </div>   
+                    <div class = "menu-icon">
+                        <ul class = "symbols">
+                            <li><button id="message"><img src="Assets\envelope.png" alt="set" class="bottom-image"></img></button></li>
+                            <li><button id="calendar"><img src="Assets\calendar.png" alt="settings" class="bottom-image"></img></button></li>
+                            <li><button id="connect"><img src="Assets\user.png" alt="connect" class="bottom-image"></img></button></li>
+                            <li><button id="pin"><img src="Assets\paperclip.png" alt="pin" class="bottom-image"></img></button></li>
+                            <li><button id="click"><img src="Assets\check-mark.png" alt="click" class="bottom-image"></img></button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="navigation-bar" id="navigator">
+                    <button class="close" onclick="closeNavigate()"> > </button>
+                    <input type="image" src="Assets\brightness.png" class="navigation-top-image" />
+                    <input type="image" src="Assets\star-outline.png" class="navigation-top-image" />
+                    <input type="image" src="Assets\calendar.png" class="navigation-top-image" />
+                    <input type="image" src="Assets\user.png" class="navigation-top-image" />
+                    <input type="image" src="Assets\home.png" class="navigation-top-image" id="home-image" />
+                    <input type="image" src="Assets\envelope.png" class="navigation-bottom-image" />    
+                    <input type="image" src="Assets\calendar.png" class="navigation-bottom-image" />  
+                    <input type="image" src="Assets\user.png" class="navigation-bottom-image" />   
+                    <input type="image" src="Assets\paperclip.png" class="navigation-bottom-image" />   
+                    <input type="image" src="Assets\check-mark.png" class="navigation-bottom-image" /> 
+                </div>
+                <div class = "right-panel" id="right-panel-bar">
+                    <div class="right-panel-top">
+                        <div class = "right-panel-title"><span id="panel-title">MyDay</span><span id="delete-dot-button"></span></div>
+                        <div class = "panel-subtask"><button id= "add" ></button><input type="text" id="sub-text" placeholder="Add a task"></div>
+                    </div>
+                    <div id = "assigned-panel">
+                        <input type="image" src="Assets\Capture.png" id="assigned-image" />
+                    </div>
+                    <div class= "lines">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
