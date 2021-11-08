@@ -20,12 +20,19 @@
                     <li><a href="#" id="title">To Do</a></li>
                 </ul></span>
                 <span class = "center">
-                    <input type="image" src="Assets\search.png" class="search"/><input type = "text" id="search"/>
+                    <input type="image" src="Assets\search.png" class="search"/>
+                    <input type = "text" id="search"/>
                 </span>
                 <span> <ul class = "top-right-corner">
-                    <li><button id="settings"><img src="Assets\setting.png" alt="settings" class="images"></img></button></li>
-                    <li><button id="help"><img src="Assets\qnm.png" alt="question" class="images"></img></button></li>
-                    <li><button id="notification"><img src="Assets\mphone.png" alt="loud" class="images"></img></button></li>
+                    <li><button id="settings">
+                        <img src="Assets\setting.png" alt="settings" class="images"></img>
+                    </button></li>
+                    <li><button id="help">
+                        <img src="Assets\qnm.png" alt="question" class="images"></img>
+                    </button></li>
+                    <li><button id="notification">
+                        <img src="Assets\mphone.png" alt="loud" class="images"></img>
+                    </button></li>
                     <li><button id="profile">VS</button></li>
                 </ul></span>
             </div>
@@ -34,21 +41,44 @@
                     <div class = "menu">
                         <ul class = "menu-items">
                             <li><button id="back" onclick="navigate()"><</button></li>
-                            <li><button id="my-day" value ="MyDay" onclick="toDo(value)"><img src="Assets\brightness.png" alt="my-day" class="image"></img>MyDay</button></li>
-                            <li><button id="important" value="Important" onclick="toDo(value)"><img src="Assets\star-outline.png" alt="imp" class="image"></img>Important</button></li>
-                            <li><button id="planned"value="Planned" onclick="toDo(value)"><img src="Assets\calendar.png" alt="plan" class="image"></img>Planned</button></li>
-                            <li><button id="assigned" onclick="assign()"><img src="Assets\user.png" alt="assign" class="image"></img>Assigned to me</button></li>
-                            <li><button id="tasks" value="Tasks" onclick="toDo(value)"><img src="Assets\home.png" alt="tasks" class="image"></img>Tasks</button></li>
+                            <li><button id="my-day" value ="MyDay" onclick="toDo(value)">
+                                <img src="Assets\brightness.png" alt="my-day" class="image"></img>MyDay
+                            </button></li>
+                            <li><button id="important" value="Important" onclick="toDo(value)">
+                                <img src="Assets\star-outline.png" alt="imp" class="image"></img>Important
+                            </button></li>
+                            <li><button id="planned"value="Planned" onclick="toDo(value)">
+                                <img src="Assets\calendar.png" alt="plan" class="image"></img>Planned
+                            </button></li>
+                            <li><button id="assigned" onclick="assign()">
+                                <img src="Assets\user.png" alt="assign" class="image"></img>Assigned to me
+                            </button></li>
+                            <li><button id="tasks" value="Tasks" onclick="toDo(value)">
+                                <img src="Assets\home.png" alt="tasks" class="image"></img>Tasks
+                            </button></li>
                             <div id= "added-task"></div>
-                            <li><button id= "add-Task" onclick="showTask()">+</button><input type = "text" placeholder="New list" id="new-list"></li>                   
+                            <li>
+                                <button id= "add-task" onclick="showTask()">+</button>
+                                <input type = "text" placeholder="New list" id="new-list"/>
+                            </li>                   
                     </div>   
                     <div class = "menu-icon">
                         <ul class = "symbols">
-                            <li><button id="message"><img src="Assets\envelope.png" alt="set" class="bottom-image"></img></button></li>
-                            <li><button id="calendar"><img src="Assets\calendar.png" alt="settings" class="bottom-image"></img></button></li>
-                            <li><button id="connect"><img src="Assets\user.png" alt="connect" class="bottom-image"></img></button></li>
-                            <li><button id="pin"><img src="Assets\paperclip.png" alt="pin" class="bottom-image"></img></button></li>
-                            <li><button id="click"><img src="Assets\check-mark.png" alt="click" class="bottom-image"></img></button></li>
+                            <li><button id="message">
+                                <img src="Assets\envelope.png" alt="set" class="bottom-image"></img>
+                            </button></li>
+                            <li><button id="calendar">
+                                <img src="Assets\calendar.png" alt="settings" class="bottom-image"></img>
+                            </button></li>
+                            <li><button id="connect">
+                                <img src="Assets\user.png" alt="connect" class="bottom-image"></img>
+                            </button></li>
+                            <li><button id="pin">
+                                <img src="Assets\paperclip.png" alt="pin" class="bottom-image"></img>
+                            </button></li>
+                            <li><button id="click">
+                                <img src="Assets\check-mark.png" alt="click" class="bottom-image"></img>
+                            </button></li>
                         </ul>
                     </div>
                 </div>
@@ -67,13 +97,20 @@
                 </div>
                 <div class = "right-panel" id="right-panel-bar">
                     <div class="right-panel-top">
-                        <div class = "right-panel-title"><span id="panel-title">MyDay</span><span id="delete-dot-button"></span></div>
-                        <div class = "panel-subtask"><button id= "add" ></button><input type="text" id="sub-text" placeholder="Add a task"></div>
+                        <div class = "right-panel-title">
+                            <span id="panel-title">MyDay</span>
+                            <span id="delete-dot-button"></span>
+                        </div>
+                        <div class = "panel-subtask">
+                            <button id= "add" ></button>
+                            <input type="text" id="sub-text" placeholder="Add a task"/>
+                        </div>
                     </div>
                     <div id = "assigned-panel">
                         <input type="image" src="Assets\Capture.png" id="assigned-image" />
                     </div>
-                    <div class= "lines">
+                    <div id="subtext-area"></div>
+                    <div class= "lines" id="bottom-line">
                         <div class="line"></div>
                         <div class="line"></div>
                         <div class="line"></div>
@@ -84,6 +121,70 @@
                         <div class="line"></div>
                         <div class="line"></div>
                         <div class="line"></div>
+                    </div>
+                </div>
+                <div id="third-panel">
+                    <div  class="navigate-first-panel">
+                        <div class="first-panel-top">
+                            <span>
+                                <input type="checkbox" id="right-navigate-check"/>
+                            </span>
+                            <span id="header">Heading</span>
+                            <span>
+                                <img src="Assets\star-outline.png" alt="set" id="right-panel-image"></img>
+                            </span>
+                        </div>
+                        <div id = "added-step-area"></div>
+                        <div class="first-panel-bottom">
+                            <span>
+                                <button id= "add-step">+</button>
+                                <input type = "text" placeholder="Add a Step" id="new-step"/>
+                            </span>  
+                        </div>
+                    </div>
+                    <div class="navigate-second-panel">
+                        <button id="second-panel-top">
+                            <img src="Assets\brightness.png" alt="add-day" class="right-panel-images"></img>
+                            <span class="right-panel-button-text">Add to myDay</span>
+                        </button>
+                    </div>
+                    <div class="navigate-third-panel">
+                        <div>
+                            <button class="third-panel">
+                                <img src="Assets\bell.png" alt="remind-me" class="right-panel-images"></img>
+                                <span class="right-panel-button-text">Remind me</span>
+                            </button>
+                        </div>
+                        <div>
+                            <button class="third-panel">
+                                <img src="Assets\calendar.png" alt="due" class="right-panel-images"></img>
+                                <span class="right-panel-button-text">Add due date</span>
+                            </button>
+                        </div>
+                        <div>
+                            <button class="third-panel">
+                                <img src="Assets\brightness.png" alt="repeat" class="right-panel-images"></img>
+                                <span class="right-panel-button-text">Repeat</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="navigate-fourth-panel">
+                        <button id="fourth-panel">
+                            <img src="Assets\tag.png" alt="catogery" class="right-panel-images"></img>
+                            <span class="right-panel-button-text">Pick a Catogery</span>
+                        </button>
+                    </div>
+                    <div class="navigate-fifth-panel" >
+                        <button id="fifth-panel">
+                            <img src="Assets\paperclip.png" alt="add" class="right-panel-images"></img>
+                            <span class="right-panel-button-text">Add a File</span>
+                        </button>
+                    </div>
+                    <div class="navigate-sixth-panel">
+                        <input type="text" id="right-panel-textarea"/>
+                    </div>
+                    <div class="navigate-last-panel">
+                        <button id="hide-right-panel" onclick="hideRightPanel()">&times;</button>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,25 @@
+        // let addedTask = document.getElementById("added-task").childNodes;
+        // console.log(addedTask[1].innerText);
+        // addedTask[arrayIndex].innerText = newText;
+        // console.log(array);
+        //newListId.innerText=newText;
+        let checkBox = document.createElement('input')
+        checkBox.setAttribute("type","checkbox") 
+for (let index = 0; index < (toDo[arrayIndex].addingTask.length); index++) {
+      let tasksList = document.createElement("li");
+      var strikeBox =  document.createElement("input");
+      strikeBox.setAttribute("id","strike-box");
+      strikeBox.setAttribute("type","checkbox");
+      tasksList.setAttribute('id','task-line');
+      let createdText = document.createTextNode( toDo[arrayIndex].addingTask[index]);
+      tasksList.style.listStyle = "none";
+      tasksList.appendChild(createdText);
+
+     checkBox.setAttribute("id",rightPanel[indexNumber].subTask[counter])
+
+var strikeWord = document.getElementById("strike-box")
+       strikeBox.addEventListener('click',function() {
+          var str = "Hello World!";
+          var result = tasksList.innerText.strike();
+          document.getElementById("task-line").innerHTML = result;
+        });
