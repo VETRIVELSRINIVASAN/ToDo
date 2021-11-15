@@ -9,8 +9,9 @@ body {
   background-color : #ebebed;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   display: none;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .navigate-first-panel {
   display: flex;
@@ -18,6 +19,7 @@ body {
   background-color: #ffffff;
   width: 95%;
   margin-top: 5px;
+  margin-bottom: 18px;
 }
 .first-panel-top:hover,#second-panel-top:hover,.third-panel:hover {
   background-color : #d8d8de;
@@ -53,19 +55,20 @@ body {
   width: 17px;
 }
 #header {
-  margin-right: 120px;
+  margin-right: 190px;
 }
 .navigate-second-panel {
   width: 95%;
   height: 50px;
   float: right;
+  margin-bottom: 18px;
 }
 #second-panel-top {
   background-color: #ffffff;
   text-align: left;
   border: none;
   width: 100%;
-  height: 100%;
+  height: 50px;
   font-size: 15px;
 }
 .right-panel-images {
@@ -82,6 +85,7 @@ body {
   width: 95%;
   height: 150px;
   float: right;
+  margin-bottom: 18px;
   display: flex;
   flex-direction: column;
 }
@@ -98,26 +102,28 @@ body {
   width: 95%;
   height: 50px;
   float: right;
+  margin-bottom: 18px;
 }
 #fourth-panel {
   background-color: #ffffff;
   text-align: left;
   border: none;
   width: 100%;
-  height: 100%;
+  height: 50px;
   font-size: 15px;
 }
 .navigate-fifth-panel {
   width: 95%;
   height: 50px;
   float: right;
+  margin-bottom: 18px;
 }
 #fifth-panel {
   background-color: #ffffff;
   text-align: left;
   border: none;
   width: 100%;
-  height: 100%;
+  height: 50px;
   font-size: 15px;
 }
 .navigate-sixth-panel {
@@ -135,6 +141,9 @@ body {
   background-color: #ffffff;
   padding: 4px;
 }
+#new-step:focus {
+  outline: none;
+}
 #add-step {
   border: none;
   background-color: #ffffff;
@@ -145,13 +154,30 @@ body {
   cursor: pointer;
 }
 #added-step-area {
-  padding-left: 15px;
+  padding-left: 12px;
+  overflow: auto;
+}
+input[type=checkbox] {
+  width: 0.9em;
+  height: 0.9em;
+  background-color: #ffffff;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #353434;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 6px;
+}
+
+input[type=checkbox]:checked {
+  background-color: #0078D7;
 }
 .delete-button {
   position: absolute;
   margin-left: 630px;
   margin-top: 250px;
-  background-color: rgb(241, 239, 239);
+  background-color: #f1efef;
   height: 150px;
   width: 250px;
   padding-right: 5px;
@@ -160,13 +186,17 @@ body {
   display: none;
   box-shadow:  4px 8px rgba(0, 0, 0, 0.2), 6px 8px rgba(0, 0, 0, 0.19);
 }
-.delete-text {
+#second-delete-text{
+  padding-left: 5px;
+  padding-bottom: 20px;
+}
+#delete-text {
   text-align:center;
   height: 40%;
-  font-size:19px;
+  font-weight: bold;
   margin-top: 10px;
 }
-.lower-delete-text {
+#lower-delete-text {
   height: 60%;
 }
 .delete-cancel {
@@ -186,7 +216,7 @@ body {
 }
 #cancel {
   margin-left: 110px;
-  background-color: #dee3e3;
+  background-color: #ebebed;
 }
 #confirm-delete {
   background-color:	#ff0000;
@@ -206,7 +236,7 @@ body {
   flex-direction: row;
 }
 .bottom-side-tab {
-  background-color: #dee3e3;
+  background-color: #ebebed;
   width: 20%;
   display: flex;
   flex-direction: column;
@@ -237,7 +267,7 @@ body {
 #message, #calendar,#connect,#pin,#click {
   height: 42px;
   width: 40px;
-  background-color: #dee3e3;
+  background-color: #ebebed;
   border: none;
   font-size: 15px;
 }
@@ -247,7 +277,7 @@ body {
 }
 #back {
   border: none;
-  background-color:#dee3e3;
+  background-color:#ebebed;
   padding: 10px;
   color: #1f78e6;
   font-size: 20px;
@@ -281,7 +311,8 @@ body {
   text-align: left;
   margin-left: -20px;
   border: none;
-  background-color: #dee3e3;
+  background-color: #ebebed;
+  opacity: 0.7;
 }
 #my-day:hover, #important:hover, #planned:hover, #assigned:hover, #tasks:hover {
   background-color: #ffffff;
@@ -296,7 +327,7 @@ body {
   font-size: 25px;
   text-align: center;
   border: none;
-  background-color: #dee3e3;
+  background-color: #ebebed;
 }
 #add-task:hover {
   background-color: #ffffff;
@@ -304,7 +335,13 @@ body {
 }
 #new-list {
   padding: 5px;
-  width: 180px;
+  width: 120px;
+  background-color: #ebebed;
+  border: none;
+}
+#new-list:focus {
+  outline: none;
+  background-color: #ffffff;
 }
 .right-panel-top{
   padding: 10px;
@@ -344,6 +381,9 @@ body {
 .line {
  border-bottom: 1.5px solid #e6e7ea;
 }
+.border-line {
+  border-bottom: 1.5px solid #e6e7ea;
+ }
 .right-panel {
   color: #000000;
   background-color:#ffffff;
@@ -380,6 +420,8 @@ body {
   width: 350px;
   padding-top: 7px;
   padding-bottom: 7px;
+  border-radius: 2px;
+  border: none;
 }
 #settings {
   background-color: #1f78e6;
@@ -389,8 +431,7 @@ body {
 }
 #settings:hover,#notification:hover,#help:hover,#profile:hover,#navigate:hover {
   cursor: pointer;
-  background-color: #1fe4e6;
-  border: 1px solid #ffffff;
+  background-color: #1866C6;
 }
 #notification {
   background-color: #1f78e6;
@@ -419,7 +460,7 @@ body {
 .new-list-style {
   cursor: pointer;
   color: #1f78e6;
-  background:  #dee3e3;
+  background:  #ebebed;
   padding-left: 4px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -443,7 +484,7 @@ body {
 .navigation-bar {
   display:none;
   flex-direction:column;
-  background:  #dee3e3;
+  background:  #ebebed;
   width:4%;
   height:100%;
   justify-content:space-between;
@@ -454,8 +495,12 @@ body {
   padding: 15px;
   padding-right: 18px;
 }
-#home-image {
-  border-bottom: 1px solid	#808080;
+#toggle-upper-images {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#envelope-image {
+  border-top: 1px solid	#808080;
 }
 .navigation-bottom-image {
   height: 17px;
@@ -469,7 +514,7 @@ body {
 }
 .close {
   border: none;
-  background-color:#dee3e3;
+  background-color:#ebebed;
   padding: 10px;
   color: #1f78e6;
   font-size: 20px;
@@ -504,9 +549,6 @@ body {
   margin-left: 2px;
 }
 #deletor:hover {
-  background-color: #dee3e3;
+  background-color: #ebebed;
   cursor: pointer;
 }
-/*.new {
-  text-decoration: line-through;
-}*/

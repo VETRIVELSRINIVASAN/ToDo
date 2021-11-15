@@ -7,8 +7,9 @@
     </head>
     <body>
         <div class = "delete-button" id="deleting-button">
-            <div class = "delete-text">Are you sure want to delete?</div>
-            <div class = "lower-delete-text">
+            <div id = "delete-text">Are you sure want to delete?</div>
+            <div id = "second-delete-text"></div>
+            <div id = "lower-delete-text">
                 <button class = "delete-cancel" id ="cancel" >Cancel</button>
                 <button class = "delete-cancel" id ="confirm-delete" >Delete</button>
             </div>
@@ -84,12 +85,14 @@
                 </div>
                 <div class="navigation-bar" id="navigator">
                     <button class="close" onclick="closeNavigate()"> > </button>
-                    <input type="image" src="Assets\brightness.png" class="navigation-top-image" />
-                    <input type="image" src="Assets\star-outline.png" class="navigation-top-image" />
-                    <input type="image" src="Assets\calendar.png" class="navigation-top-image" />
-                    <input type="image" src="Assets\user.png" class="navigation-top-image" />
-                    <input type="image" src="Assets\home.png" class="navigation-top-image" id="home-image" />
-                    <input type="image" src="Assets\envelope.png" class="navigation-bottom-image" />    
+                    <div id="toggle-upper-images">
+                        <input type="image" src="Assets\brightness.png" class="navigation-top-image" />
+                        <input type="image" src="Assets\star-outline.png" class="navigation-top-image" />
+                        <input type="image" src="Assets\calendar.png" class="navigation-top-image" />
+                        <input type="image" src="Assets\user.png" class="navigation-top-image" />
+                        <input type="image" src="Assets\home.png" class="navigation-top-image" />
+                    </div>
+                    <input type="image" src="Assets\envelope.png" class="navigation-bottom-image" id="envelope-image"/>    
                     <input type="image" src="Assets\calendar.png" class="navigation-bottom-image" />  
                     <input type="image" src="Assets\user.png" class="navigation-bottom-image" />   
                     <input type="image" src="Assets\paperclip.png" class="navigation-bottom-image" />   
@@ -137,7 +140,7 @@
                         <div id = "added-step-area"></div>
                         <div class="first-panel-bottom">
                             <span>
-                                <button id= "add-step">+</button>
+                                <button id= "add-step" onclick = "addStep()">+</button>
                                 <input type = "text" placeholder="Add a Step" id="new-step"/>
                             </span>  
                         </div>
@@ -145,13 +148,13 @@
                     <div class="navigate-second-panel">
                         <button id="second-panel-top">
                             <img src="Assets\brightness.png" alt="add-day" class="right-panel-images"></img>
-                            <span class="right-panel-button-text">Add to myDay</span>
+                            <span class="right-panel-button-text">Add to My Day</span>
                         </button>
                     </div>
                     <div class="navigate-third-panel">
                         <div>
                             <button class="third-panel">
-                                <img src="Assets\bell.png" alt="remind-me" class="right-panel-images"></img>
+                                <img src="Assets\notification.png" alt="remind-me" class="right-panel-images"></img>
                                 <span class="right-panel-button-text">Remind me</span>
                             </button>
                         </div>
